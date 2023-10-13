@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\LUCIO\Desktop\proyectoIngSistemas\Ingenieria-en-Sistemas\Sistemas-Operativos\.metadata\.plugins\org.eclipse.jdt.core
+618069744.index
+1865797976.index
+1525998303.index
