@@ -1,0 +1,31 @@
+package SumTwoArraysWithThreads;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] arrayToSum = new int[100000000];
+		
+		for (int i = 0; i < arrayToSum.length; i++) {
+			arrayToSum[i] = (int)(Math.random() * 10);
+		}
+		
+		//Vamos a realizar la suma normal con un for O(n)
+		//En mi computadora tarda aproximadamente 4 segundos
+		int sum = 0;
+		for (int i = 0; i < arrayToSum.length; i++) {
+			sum += arrayToSum[i];
+		}
+		System.out.println(sum);
+		
+		
+		//Ahora vamos a realizarlo con hilos, 
+		
+		ThreadSum t1 = new ThreadSum(arrayToSum,0,25000000);
+		ThreadSum t2 = new ThreadSum(arrayToSum,25000000,50000000);
+		ThreadSum t3 = new ThreadSum(arrayToSum,50000000,75000000);
+		ThreadSum t4 = new ThreadSum(arrayToSum,75000000,100000000);
+		
+		
+	}
+
+}

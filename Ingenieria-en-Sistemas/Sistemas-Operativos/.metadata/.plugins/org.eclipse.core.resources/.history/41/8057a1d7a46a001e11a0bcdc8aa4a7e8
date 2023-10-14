@@ -1,0 +1,22 @@
+package SumTwoArraysWithThreads;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int[] arrayToSum = new int[100000];
+		
+		for (int i = 0; i < arrayToSum.length; i++) {
+			arrayToSum[i] = (int)(Math.random() * 10);
+		}
+		
+		//Vamos a realizar la suma normal con un for O(n)
+		int sum = 0;
+		for (int i = 0; i < arrayToSum.length; i++) {
+			sum += arrayToSum[i];
+		}
+		System.out.println(sum);
+		
+		
+	}
+
+}

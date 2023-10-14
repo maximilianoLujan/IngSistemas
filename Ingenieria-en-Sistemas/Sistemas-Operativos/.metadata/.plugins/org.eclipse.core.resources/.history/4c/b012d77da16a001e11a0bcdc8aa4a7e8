@@ -1,0 +1,20 @@
+package CounterWithThreads;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Counter c1 = new Counter(true);
+		Counter c2 = new Counter(false);
+		
+		
+		Thread hiloUno = new Thread(new ThreadCounter(c1,5));
+		Thread hiloDos = new Thread(new ThreadCounter(c1,100));
+	
+		
+		hiloUno.start();
+		hiloDos.start();
+		
+
+	}
+
+}

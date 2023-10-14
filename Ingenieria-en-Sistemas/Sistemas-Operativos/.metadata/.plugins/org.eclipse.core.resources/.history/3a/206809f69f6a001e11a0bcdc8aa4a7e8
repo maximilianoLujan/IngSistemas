@@ -1,0 +1,32 @@
+package CounterWithThreads;
+
+public class Counter {
+	private boolean sincronizado;
+	
+	
+	
+	public Counter(boolean sincronizado) {
+		this.sincronizado = sincronizado;
+	}
+	
+	public boolean getSincronizado() {
+		return this.sincronizado;
+	}
+	
+	public synchronized void mostrarContadorSincronizado(int idHilo,int n) {
+		System.out.println("Inicializando hilo con synchronized"+ idHilo + " ");
+		for (int i = 0; i <= n; i++) {
+			System.out.println(i);
+		}
+		System.out.println("Finalizando hilo con synchronized"+ idHilo + " ");
+	}
+	
+	
+	public void mostrarContadorNoSincronizado(int idHilo,int n) {
+		System.out.println("Inicializando hilo no sincronizado "+ idHilo + " ");
+		for (int i = 0; i <= n; i++) {
+			System.out.println(i);
+		}
+		System.out.println("Finalizando hilo no sincronizado"+ idHilo + " ");
+	}
+}
