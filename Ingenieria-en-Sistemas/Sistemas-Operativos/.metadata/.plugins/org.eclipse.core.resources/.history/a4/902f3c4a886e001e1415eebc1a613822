@@ -1,0 +1,14 @@
+package ProblemaBarberia;
+
+public class Barberia {
+
+	
+	
+	public boolean hayAsientoLibre() {
+		return true;
+	}
+	
+	public void tomarAsiento(Cliente c1) {
+		
+	}
+}

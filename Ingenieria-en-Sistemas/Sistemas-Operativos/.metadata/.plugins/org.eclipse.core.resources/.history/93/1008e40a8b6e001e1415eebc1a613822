@@ -1,0 +1,18 @@
+package ProblemaBarberia;
+
+public class Barbero implements Runnable{
+	Barberia barberia;
+	boolean dormido;
+	
+	public Barbero(Barberia barberia) {
+		this.barberia = barberia;
+		dormido = true;
+		
+	}
+	
+	
+	@Override
+	public void run() {
+		
+	}
+}

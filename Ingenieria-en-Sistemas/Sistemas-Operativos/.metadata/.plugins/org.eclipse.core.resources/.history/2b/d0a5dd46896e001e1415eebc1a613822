@@ -1,0 +1,34 @@
+package ProblemaBarberia;
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Barberia {
+	int maxSillas;
+	boolean barberoAtendiendo;
+	Barbero barbero;
+	Queue<Cliente> clientesEsperando;
+	
+	public Barberia(int sillasSalas) {
+		maxSillas = sillasSalas;
+		clientesEsperando = new LinkedList<Cliente>();
+		barbero = null;
+		barberoAtendiendo = false;
+	}
+	
+	public void setBarbero(Barbero b1) {
+		this.barbero = b1;
+	}
+	
+	public boolean hayAsientoLibre() {
+		return true;
+	}
+	
+	public void tomarAsiento(Cliente c1) {
+		
+	}
+	
+	public synchronized Cliente proximoCliente() {
+		Cliente next = clientesEsperando.poll();
+		barberoAtendiendo = next != null ?true :false;
+	}
+}

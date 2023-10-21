@@ -1,0 +1,21 @@
+package BlancanievesSieteEnanitos;
+
+public class Casa {
+	private int cantSillas;
+	private int sillasOcupadas;
+	
+	public Casa(int cantSillas){
+		this.sillasOcupadas = 0;
+		this.cantSillas = cantSillas;
+	}
+	
+	public synchronized boolean ocuparSilla() {
+		if ((cantSillas - sillasOcupadas) == 0) {
+			System.out.println("Estan todas las sillas ocupadas");
+			return false;
+		} else {
+			sillasOcupadas++;
+			return true;
+		}
+	}
+}

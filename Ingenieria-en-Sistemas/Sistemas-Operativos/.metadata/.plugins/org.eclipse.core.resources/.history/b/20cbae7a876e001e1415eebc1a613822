@@ -1,0 +1,12 @@
+package ProblemaBarberia;
+
+public class Cliente {
+	String name;
+	Barberia barberia;
+	boolean peloCortado = false;
+	
+	public Cliente(String name,Barberia b) {
+		this.name = name;
+		this.barberia = b;
+	}
+}

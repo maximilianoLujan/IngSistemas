@@ -1,0 +1,27 @@
+package LaPiedraOscilante;
+
+public class Coche {
+	int capacidad;
+	int asientosOcupados;
+	Parque p1;
+	
+	public Coche(int asientosOcupados, Parque p1) {
+		this.p1 = p1;
+		this.capacidad = 4;
+		this.asientosOcupados = asientosOcupados;
+		
+	}
+	
+	public synchronized Coche esCocheLibre() {
+		if (capacidad == asientosOcupados) {
+			System.out.println("El coche esta ocupado");
+			return null;
+		} else {
+			return this;
+		}
+	}
+	
+	public synchronized void ocuparCoche() {
+		asientosOcupados++;
+	}
+}

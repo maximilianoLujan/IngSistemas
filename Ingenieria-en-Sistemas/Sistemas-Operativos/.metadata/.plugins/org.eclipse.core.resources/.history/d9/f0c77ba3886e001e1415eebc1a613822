@@ -1,0 +1,18 @@
+package ProblemaBarberia;
+import java.util.Queue;
+
+public class Barberia {
+	int maxSillas;
+	boolean barberoAtendiendo;
+	Barbero barbero;
+	Queue<Cliente> clientesEsperando;
+	
+	
+	public boolean hayAsientoLibre() {
+		return true;
+	}
+	
+	public void tomarAsiento(Cliente c1) {
+		
+	}
+}

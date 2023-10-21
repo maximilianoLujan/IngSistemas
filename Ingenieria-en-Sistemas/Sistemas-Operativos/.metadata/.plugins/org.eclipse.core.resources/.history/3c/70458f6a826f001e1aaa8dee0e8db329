@@ -1,0 +1,51 @@
+package LaPiedraOscilante;
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Coche extends Thread{
+	int capacidad;
+	int pasajeros;
+	Queue<Visitador> visitadoresEsperando;
+	
+	public Coche(int capacidad,int pasajeros) {
+		this.capacidad = capacidad;
+		this.pasajeros = pasajeros;
+		visitadoresEsperando = new LinkedList<Visitador>();
+	}
+
+	    public synchronized void board(Visitador visitor) {
+	    	visitadoresEsperando.add(visitor);
+
+	        if (pasajeros >= capacidad) {
+	            try {
+	            	
+	                wait();
+	            } catch (InterruptedException e) {
+	                Thread.currentThread().interrupt();
+	            }
+	        }
+	    }
+
+	    public synchronized void ride() {
+	        // Lógica del paseo en coche
+	        // ...
+
+	        passengers = 0;
+	        waitingVisitors.clear();
+	        notifyAll();
+	    }
+
+	    public synchronized void reportIssue() {
+	        // Lógica para reportar una falla
+	        // ...
+
+	        // Si se reporta una falla, liberar un coche para abordar
+	        notify();
+	    }
+
+	    @Override
+	    public void run() {
+	        // Lógica de funcionamiento del coche
+	        // ...
+	    }
+}

@@ -1,0 +1,12 @@
+package LaPiedraOscilante;
+import java.util.Queue;
+
+public class Coche {
+	int capacidad;
+	int pasajeros;
+	Queue<Visitador> visitadoresEsperando = new LinkedList<Visitador>();
+	
+	public Coche(int capacidad,int pasajeros) {
+		
+	}
+}

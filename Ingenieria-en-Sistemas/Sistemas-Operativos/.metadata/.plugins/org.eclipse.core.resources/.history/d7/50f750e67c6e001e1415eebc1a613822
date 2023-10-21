@@ -1,0 +1,16 @@
+package BlancanievesSieteEnanitos;
+
+public class Enanito extends Thread{
+	private boolean comiendo;
+	Casa c1;
+	
+	public Enanito(boolean comiendo,Casa c1) {
+		this.comiendo = comiendo;
+		this.c1 = c1;
+	}
+	
+	@Override
+	public void run() {
+		boolean ocupo = c1.ocuparSilla();
+	}
+}
