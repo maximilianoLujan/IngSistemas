@@ -1,0 +1,14 @@
+package ProductorConsumidor;
+
+public class main {
+
+	public static void main(String[] args) {
+		
+		IBuffer<Integer> i= new PrimerBuffer<>(10);
+		
+		
+		Productor p = new Productor(,i);
+
+	}
+
+}

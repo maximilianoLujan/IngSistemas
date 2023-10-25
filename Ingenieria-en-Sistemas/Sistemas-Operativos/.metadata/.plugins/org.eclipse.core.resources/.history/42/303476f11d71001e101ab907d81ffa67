@@ -1,0 +1,15 @@
+package CuentaBancariaSemaforos;
+
+public class main {
+
+	public static void main(String[] args) {
+		Banco cuentaFamiliar = new Banco(1000);
+		
+		Thread p1 = new Thread(new Persona("Mario",cuentaFamiliar));
+		Thread p2 = new Thread(new Persona("Facundo",cuentaFamiliar));
+		Thread p3 = new Thread(new Persona("Fernando",cuentaFamiliar));
+		Thread p4 = new Thread(new Persona("Miriam",cuentaFamiliar));
+
+	}
+
+}

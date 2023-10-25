@@ -1,0 +1,28 @@
+package EjercicioBlancaNieves;
+
+public class Casa {
+	int maximoSillas;
+	int sillasOcupadas;
+	
+	
+	public Casa(int maximoSillas) {
+		this.maximoSillas = maximoSillas;
+		this.sillasOcupadas = 0;
+	}
+	
+	public synchronized boolean ocuparSilla() {
+		if (sillasOcupadas == maximoSillas) {
+			return false;
+		}
+		sillasOcupadas++;
+		return true;
+	}
+	
+	public synchronized void desocuparSilla() {
+		sillasOcupadas--;
+	}
+	
+	public int getSillasOcupadas() {
+		return this.sillasOcupadas;
+	}
+}

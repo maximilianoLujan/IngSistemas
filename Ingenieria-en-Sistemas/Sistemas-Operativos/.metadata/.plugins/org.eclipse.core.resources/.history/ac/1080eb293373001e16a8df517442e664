@@ -1,0 +1,7 @@
+package ProductorConsumidor;
+
+public interface IBuffer<T> {
+	
+	public void put(T elemento);
+	public T get();
+}

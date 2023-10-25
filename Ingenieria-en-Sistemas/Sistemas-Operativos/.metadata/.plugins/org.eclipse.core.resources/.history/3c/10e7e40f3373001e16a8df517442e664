@@ -1,0 +1,5 @@
+package ProductorConsumidor;
+
+public interface IBuffer {
+
+}

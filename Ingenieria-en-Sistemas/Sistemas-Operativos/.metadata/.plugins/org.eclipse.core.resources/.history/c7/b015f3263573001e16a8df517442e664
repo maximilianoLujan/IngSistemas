@@ -1,0 +1,31 @@
+package ProductorConsumidor;
+import java.util.List;
+import java.util.LinkedList;
+
+public class PrimerBuffer<T> implements IBuffer<T> {
+	private List<T> data;
+	private int maxSize;
+	
+	
+	
+	
+	
+	public PrimerBuffer(List<T> data, int maxSize) {
+		super();
+		this.data = new LinkedList<T>();
+		this.maxSize = maxSize;
+	}
+
+	@Override
+	public void put(T elemento) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public T get() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

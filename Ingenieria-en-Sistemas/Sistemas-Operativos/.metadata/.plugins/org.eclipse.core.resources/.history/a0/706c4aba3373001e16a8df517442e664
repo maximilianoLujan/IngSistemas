@@ -1,0 +1,27 @@
+package ProductorConsumidor;
+
+public class Productor extends Thread{
+	private int cantidadElementosAGenerar;
+	private IBuffer<Integer> buffer;
+	private long tiempoDeEspera;
+	
+	public Productor() {
+		
+	}
+	
+	
+	@Override
+	public void run() {
+		String name = Thread.currentThread().getName();
+		for(int i = 1; i <= cantidadElementosAGenerar;i++ ) {
+			System.out.println("");
+			this.buffer.put(i);
+			try {
+				Thread.sleep(tiempoDeEspera);
+			} catch (InterruptedException e) {
+				return;
+			}
+			
+		}
+	}
+}
