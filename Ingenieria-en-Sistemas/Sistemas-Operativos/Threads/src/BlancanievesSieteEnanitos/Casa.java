@@ -1,26 +1,29 @@
 package BlancanievesSieteEnanitos;
 
+import java.util.concurrent.Semaphore;
+
 public class Casa {
-	private int cantSillas;
-	private int sillasOcupadas;
-	
-	public Casa(int cantSillas){
-		this.sillasOcupadas = 0;
-		this.cantSillas = cantSillas;
-	}
-	
-	public synchronized int ocuparSilla() {
-		if ((cantSillas - sillasOcupadas) == 0) {
-			System.out.println("Estan todas las sillas ocupadas");
-			return -1;
-		} else {
-			sillasOcupadas++;
-			return cantSillas - sillasOcupadas;
-		}
-	}
-	
-	//Este metodo devuelve si hay sillas libres en la casa
-	public synchronized boolean haySillasLibres() {
-		return ((cantSillas - sillasOcupadas) > 0);
-	}
+    private Semaphore sillasDisponibles;
+    Blancanieves blancanieves;
+
+    public Casa(int cantSillas, Blancanieves b) {
+        this.sillasDisponibles = new Semaphore(cantSillas);
+        this.blancanieves = b;
+    }
+
+    public void sentarseAComer(Enanito e1) {
+        try {
+            System.out.println("El enanito " + Thread.currentThread().getId() + " está esperando por un asiento" + sillasDisponibles.availablePermits());
+            sillasDisponibles.acquire();
+            System.out.println("El enanito " + Thread.currentThread().getId() + " se sentó y está esperando por la comida");
+            blancanieves.avisar(e1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void liberarAsiento() {
+        sillasDisponibles.release();
+        System.out.println("El enanito " + Thread.currentThread().getId() + " liberó un asiento");
+    }
 }

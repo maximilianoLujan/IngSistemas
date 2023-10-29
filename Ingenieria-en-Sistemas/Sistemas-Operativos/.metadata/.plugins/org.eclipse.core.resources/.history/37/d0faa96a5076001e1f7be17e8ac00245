@@ -1,0 +1,32 @@
+package BlancanievesSieteEnanitos;
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Blancanieves extends Thread{
+	Queue<Enanito> enanitosEsperando;
+
+	public Blancanieves() {
+		enanitosEsperando = new LinkedList<Enanito>();
+	}
+	
+	@Override
+	public void run() {
+		while(enanitosEsperando.isEmpty()) {
+			System.out.println("Blancanieves " + Thread.currentThread().getId() + " esta paseando porque no hay enanitos");
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		Enanito e1 = enanitosEsperando.poll();
+		e1.comer();
+	}
+	
+	public synchronized void avisar(Enanito e1) {
+		this.notify();
+		enanitosEsperando.add(e1);
+	}
+}

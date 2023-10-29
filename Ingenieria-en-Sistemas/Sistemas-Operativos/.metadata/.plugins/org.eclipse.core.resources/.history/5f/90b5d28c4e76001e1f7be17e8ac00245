@@ -1,0 +1,32 @@
+package BlancanievesSieteEnanitos;
+
+import java.util.Queue;
+
+public class Casa {
+	private int cantSillas;
+	private int sillasOcupadas;
+	Blancanieves blancanieves;
+	Queue<Enanito> enanitos;
+	
+	public Casa(int cantSillas,Blancanieves b,Queue<Enanito> e){
+		this.sillasOcupadas = 0;
+		this.cantSillas = cantSillas;
+		this.blancanieves = b;
+		this.enanitos = e;
+	}
+	
+	public synchronized void sentarseAComer(Enanito e1) {
+		while(sillasOcupadas >= cantSillas) {
+			System.out.println("El enanito " + Thread.currentThread().getId() + " no encontro lugar");
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("El enanito " + Thread.currentThread().getId() + " se sentto y esta esperando por la comida");
+		blancanieves.avisar(e1);
+	}
+
+}

@@ -1,0 +1,31 @@
+package ProductoresConsumidores;
+
+public class Productor extends Thread {
+	private int elementosAProducir;
+	Cola c1;
+	
+	public Productor(Cola c1,int elementosAProducir) {
+		this.c1 = c1;
+		this.elementosAProducir = elementosAProducir;
+	}
+	
+	@Override
+	public void run() {
+		for (int i = 1; i <= elementosAProducir; i++) {
+			producirElemento(i);
+		}
+	}
+	
+	public synchronized void producirElemento(int elem) {
+		if (c1.estaLlena()) {
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("El " + Thread.currentThread().getName() + " produjo el elemento " + elem);
+		c1.addElemento(elem);
+	}
+}
