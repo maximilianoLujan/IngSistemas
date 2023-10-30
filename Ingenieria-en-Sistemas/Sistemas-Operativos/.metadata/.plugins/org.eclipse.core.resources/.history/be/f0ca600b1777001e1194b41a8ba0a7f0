@@ -26,9 +26,8 @@ public class Productor extends Thread {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
-			c1.addElemento(elem);
-			System.out.println("El productor produjo el elemento: " + elem);
-			c1.notifyAll();
+			c1.addElemento(String.valueOf(i));
+			
 		}
 	}
 }

@@ -28,7 +28,7 @@ public class Consumidor extends Thread{
 				}
 			int elementoConsumido = c1.getElemento();
 			System.out.println("El consumidor consumio el elemento: " + elementoConsumido);
-			c1.notify();
+			
 		}	
 	}
 }

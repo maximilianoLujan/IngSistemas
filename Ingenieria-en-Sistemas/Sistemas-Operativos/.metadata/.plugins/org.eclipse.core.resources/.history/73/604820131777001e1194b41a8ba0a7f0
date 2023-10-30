@@ -28,7 +28,7 @@ public class Productor extends Thread {
 				}
 			c1.addElemento(elem);
 			System.out.println("El productor produjo el elemento: " + elem);
-			c1.notifyAll();
+			
 		}
 	}
 }

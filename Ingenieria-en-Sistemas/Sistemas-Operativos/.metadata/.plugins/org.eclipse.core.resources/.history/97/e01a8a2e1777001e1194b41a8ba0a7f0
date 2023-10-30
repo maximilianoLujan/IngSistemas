@@ -1,0 +1,10 @@
+package ProductoresConsumidores;
+
+public class main {
+
+	public static void main(String[] args) {
+		Cola c1 = new Cola(100);
+
+	}
+
+}

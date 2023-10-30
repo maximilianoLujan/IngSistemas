@@ -1,0 +1,11 @@
+package ProductoresConsumidores;
+
+public class Productor extends Thread {
+	private Cola c1;
+	private int elementosAProducir;
+	
+	public Productor(Cola c1, int elementosAProducir) {
+		this.c1 = c1;
+		this.elementosAProducir = elementosAProducir;
+	}
+}
