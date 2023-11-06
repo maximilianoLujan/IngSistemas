@@ -1,0 +1,5 @@
+package LaPiedraOscilante;
+
+public class Tecnico extends Thread {
+
+}

@@ -1,0 +1,23 @@
+package BarHangover;
+
+import java.util.concurrent.Semaphore;
+
+public class Hangover {
+	private Semaphore coca;
+	private Semaphore cerveza;
+	private Semaphore whisky;
+	private Semaphore fernet;
+	private Semaphore jugo;
+	
+	
+	
+	public Hangover() {
+		coca = new Semaphore(1);
+		fernet = new Semaphore(1);
+		whisky = new Semaphore(1);
+		jugo = new Semaphore(1);
+		cerveza = new Semaphore(1);
+		
+	}
+	
+}

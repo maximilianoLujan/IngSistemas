@@ -1,0 +1,30 @@
+package ManoDeTruco;
+
+import java.util.ArrayList;
+
+public class Mesa {
+	private ArrayList<Jugador> jugadores;
+	
+	public Mesa() {
+		jugadores = new ArrayList<Jugador>();
+	}
+	
+	public void addJugador(Jugador j1) {
+		jugadores.add(j1);
+	}
+	
+	public synchronized void cambiarTurno() {
+		//Suponiendo que hay solo dos jugadores
+		//Si hubiese mas, deberia cambiar la logica
+		if(jugadores.get(0).getTurno()) {
+			jugadores.get(0).setTurno(false);
+			jugadores.get(1).setTurno(true);
+			return;
+		} else {
+			jugadores.get(1).setTurno(false);
+			jugadores.get(0).setTurno(true);
+			return;
+		}
+		
+	}
+}

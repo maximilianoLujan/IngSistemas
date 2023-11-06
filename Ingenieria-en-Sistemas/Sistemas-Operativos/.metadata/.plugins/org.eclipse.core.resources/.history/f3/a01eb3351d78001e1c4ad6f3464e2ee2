@@ -1,0 +1,29 @@
+package RondaDeMate;
+
+public class Cebador extends Persona {
+	private RondaDeMates ronda;
+	private boolean estanTomando;
+	
+	
+	public Cebador(RondaDeMates ronda) {
+		this.ronda = ronda;
+		this.estanTomando = false;
+	}
+	
+	
+	@Override 
+	public void run() {
+		cebarMates();
+	}
+	
+	public synchronized void cebarMates() {
+		while(true) {
+			while(estanTomando)
+		}
+	}
+	
+	public synchronized void termineDeTomar() {
+		this.estanTomando = false;
+		this.notify();
+	}
+}

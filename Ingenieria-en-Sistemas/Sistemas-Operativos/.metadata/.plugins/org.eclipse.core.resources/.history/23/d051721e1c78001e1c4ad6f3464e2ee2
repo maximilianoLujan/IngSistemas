@@ -1,0 +1,37 @@
+package RondaDeMate;
+
+public class Tomador extends Persona{
+	private boolean estaComiendo;
+	private boolean miTurno;
+	
+	
+	public Tomador(boolean estaComiendo) {
+		super();
+		this.estaComiendo = estaComiendo;
+		this.miTurno = false;
+	}
+	
+	@Override
+	public void run() {
+		esperarMate();
+	}
+	
+	public synchronized void esperarMate() {
+		while(true) {
+			while(!miTurno) {
+				try {
+					System.out.println("El tomador " + Thread.currentThread().getName() + "esta esperando el mate");
+					this.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	public synchronized void setTurno() {
+		this.miTurno = true;
+		this.notify();
+	}
+}

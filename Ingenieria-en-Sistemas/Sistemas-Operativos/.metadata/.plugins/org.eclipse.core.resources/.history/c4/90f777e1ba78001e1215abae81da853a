@@ -1,0 +1,13 @@
+package ManoDeTruco;
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Mesa {
+	private Queue<Jugador> jugadores;
+	
+	public Mesa() {
+		jugadores = new LinkedList<Jugador>();
+	}
+	
+}

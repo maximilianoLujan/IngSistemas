@@ -1,0 +1,79 @@
+package LaPiedraOscilante;
+
+import java.util.*;
+
+public class Coche extends Thread{
+	private int cantPasajeros;
+	private int maxPasajeros;
+	Tecnico tecnico;
+	
+	
+	public Coche(int maxPasajeros,Tecnico tecnico) {
+		this.cantPasajeros = 0;
+		this.maxPasajeros = maxPasajeros;
+		this.tecnico = tecnico;
+	}
+	
+	@Override
+	public void run() {
+		esperarPasajeros();
+	}
+	
+	public synchronized void esperarPasajeros() {
+			while(this.cantPasajeros < this.maxPasajeros ) {
+				try {
+					System.out.println("El coche esta esperando pasajeros");
+					this.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			viajar();
+		}
+	}
+	
+	private synchronized void viajar() {
+		try {
+			System.out.println("El coche esta realizando el viaje");
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		double random = Math.random();
+		
+		if (random < 0.22) {
+			System.out.println("El coche se rompio");
+			tecnico.addCoche(this);
+			try {
+				this.wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} 
+	
+		System.out.println("El coche termino el viaje");
+		
+	}
+
+	public synchronized boolean asientoLibre() {
+		return this.cantPasajeros < this.maxPasajeros;
+	}
+	
+	public synchronized void ocuparAsiento() {
+		this.cantPasajeros++;
+		this.notify();
+	}
+	
+	public synchronized void cocheArreglado() {
+		this.notify();
+	}
+
+	public int getMaxVisitantes() {
+		return this.maxPasajeros;
+	}
+	
+	public int getCantVisitantes() {
+		return this.cantPasajeros;
+	}
+}

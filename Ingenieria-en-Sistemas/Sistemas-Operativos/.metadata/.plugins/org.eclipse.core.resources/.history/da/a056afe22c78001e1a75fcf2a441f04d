@@ -1,0 +1,32 @@
+package LaPiedraOscilante;
+
+import java.util.ArrayList;
+
+public class Ejecutable {
+
+	public static void main(String[] args) {
+		Tecnico t1 = new Tecnico();
+		Coche c1 = new Coche(4,t1); 
+		Coche c2 = new Coche(4,t1);
+		ArrayList<Coche> coches = new ArrayList<Coche>();
+		coches.add(c1);
+		coches.add(c2);
+		
+		
+		
+		Museo m1 = new Museo(coches);
+		
+		t1.start();
+		
+		
+		
+		c1.start();
+		c2.start();
+		
+		for (int i = 1; i <= 10; i++) {
+			Visitante v1 = new Visitante(m1);
+			v1.start();
+		}
+	}
+
+}

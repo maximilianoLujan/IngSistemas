@@ -1,0 +1,15 @@
+package LaPiedraOscilante;
+
+public class Ejecutable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Tecnico t1 = new Tecnico();
+		
+		t1.start();
+		
+		Coche c1 = new Coche(4,t1); 
+		Coche c2 = new Coche(4,t1);
+	}
+
+}

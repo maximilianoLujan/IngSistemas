@@ -1,0 +1,27 @@
+package ManoDeTruco;
+import java.util.concurrent.*;
+
+public class Ejecutable {
+
+	public static void main(String[] args) {
+        Semaphore turno = new Semaphore(1); // Inicialmente, el primer jugador tiene el turno
+        Semaphore finJuego = new Semaphore(0); // Inicialmente, el juego no ha terminado
+
+        Jugador jugador1 = new Jugador("Jugador 1", turno, finJuego);
+        Jugador jugador2 = new Jugador("Jugador 2", turno, finJuego);
+
+        jugador1.start();
+        jugador2.start();
+
+        // Simulación de juego: cuando ambos jugadores se quedan sin cartas, termina el juego
+        try {
+            Thread.sleep(5000); // Simulación de juego
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
+        // Marcar el fin del juego
+        finJuego.release();
+	}
+
+}

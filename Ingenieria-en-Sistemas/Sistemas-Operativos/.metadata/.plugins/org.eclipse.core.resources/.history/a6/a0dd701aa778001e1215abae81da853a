@@ -1,0 +1,21 @@
+package SalaVideojuegos;
+
+public class Juego extends Thread{
+	private String nombreJuego;
+	private boolean estanJugando;
+	
+	
+	public Juego(String nombreJuego,boolean estanJugando) {
+		this.estanJugando = estanJugando;
+		this.nombreJuego = nombreJuego;
+	}
+	
+	@Override
+	public void run() {
+		synchronized(this) {
+			while(true) {
+				
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+package ManoDeTruco;
+import java.util.concurrent.*;
+
+public class Jugador extends Thread{
+	private String nombre;
+	private Semaphore miTurno;
+	private Semaphore finJuego;
+	
+	
+	
+	public Jugador(String nombre, Semaphore miTurno, Semaphore finJuego) {
+		super();
+		this.nombre = nombre;
+		this.miTurno = miTurno;
+		this.finJuego = finJuego;
+	}
+	
+	@Override
+    public void run() {
+        while (true) {
+            try {
+                miTurno.acquire(); // Esperar turno
+                if (finJuego.availablePermits() == 0) {
+                    // Fin del juego
+                    System.out.println("¡El juego ha terminado!");
+                    break;
+                }
+                finJuego.release();
+                System.out.println(nombre + " está jugando.");
+                // Lógica para jugar una carta o realizar una acción en el juego de truco
+                Thread.sleep(1000); // Simulación de acción en el juego
+                System.out.println(nombre + " ha terminado su turno.");
+                miTurno.release(); // Pasar el turno al otro jugador
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+	
+	
+	
+	
+}

@@ -1,0 +1,13 @@
+package LaPiedraOscilante;
+
+import java.util.Queue;
+
+public class Museo {
+	private Queue<Coche> coches;
+	private Queue<Visitante> visitantes;
+	
+	public Museo(Queue<Coche> coches) {
+		this.coches = coches;
+	}
+	
+}

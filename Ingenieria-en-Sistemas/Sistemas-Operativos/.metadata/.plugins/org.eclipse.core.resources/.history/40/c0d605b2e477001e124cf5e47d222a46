@@ -1,0 +1,57 @@
+package LaPiedraOscilante;
+
+import java.util.*;
+
+public class Coche extends Thread{
+	private int cantPasajeros;
+	private int maxPasajeros;
+	
+	
+	public Coche(int cantPasajeros,int maxPasajeros) {
+		this.cantPasajeros = cantPasajeros;
+		this.maxPasajeros = maxPasajeros;
+	}
+	
+	@Override
+	public void run() {
+		esperarPasajeros();
+	}
+	
+	public synchronized void esperarPasajeros() {
+		while(true) {
+			while(this.cantPasajeros < this.maxPasajeros ) {
+				try {
+					System.out.println("El coche esta esperando pasajeros");
+					this.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			viajar();
+		}
+	}
+	
+	private void viajar() {
+		try {
+			System.out.println("El coche esta realizando el viaje");
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		DecimalFormat formato2 = new DecimalFormat("#.##");
+		double random = Math.random().toFixed(2)
+		
+	}
+
+	public boolean asientoLibre() {
+		return this.cantPasajeros < this.maxPasajeros;
+	}
+	
+	public void ocuparAsiento() {
+		this.cantPasajeros++;
+		this.notify();
+	}
+	
+
+}

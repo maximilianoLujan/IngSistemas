@@ -1,0 +1,37 @@
+package ManoDeTruco;
+
+public class Jugador implements Runnable{
+	private boolean miTurno;
+	
+	
+	
+	public Jugador() {
+		miTurno = false;
+	}
+	
+	@Override
+	public void run() {
+		synchronized(this) {
+			while(true) {
+				while(!miTurno) {
+					try {
+						System.out.println("El jugador " + Thread.currentThread().getName() + "esta esperando por su turno");
+						this.wait();
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+			
+		}
+	}
+	
+	public synchronized boolean getTurno() {
+		return this.miTurno;
+	}
+	
+	public synchronized void setTurno(boolean turno) {
+		this.miTurno = turno;
+	}
+}

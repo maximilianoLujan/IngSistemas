@@ -1,0 +1,27 @@
+package RondaDeMate;
+
+import java.util.ArrayList;
+
+public class RondaDeMates {
+	private ArrayList<Tomador> amigos;
+	private int amigoTomando;
+	
+	
+	public RondaDeMates() {
+		this.amigos = new ArrayList<Tomador>();
+		this.amigoTomando = -1;
+	}
+	
+	public Tomador obtenerSiguiente() {
+		if(this.amigoTomando == -1) {
+			return amigos.get(0);
+		} else {
+			int siguiente = this.amigoTomando++;
+			if (siguiente >= amigos.size()) {
+				return amigos.get(0);
+			}
+			return amigos.get(siguiente);
+		}
+	}
+	
+}

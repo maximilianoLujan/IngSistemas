@@ -1,0 +1,14 @@
+package ManoDeTruco;
+
+public class Mesa {
+	private int cantManos;
+	private int manoActual;
+	
+	public Mesa(int cantManos) {
+		this.cantManos = cantManos;
+	}
+	
+	public void jugar() {
+		
+	}
+}

@@ -1,0 +1,25 @@
+package LaPiedraOscilante;
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+
+public class Tecnico extends Thread {
+	private Queue<Coche> cochesRotos;
+	
+	
+	public Tecnico() {
+		this.cochesRotos = new LinkedList<Coche>(); 
+	}
+	
+	
+	@Override
+	public void run() {
+		
+	}
+	
+	public void addCoche(Coche c1) {
+		this.cochesRotos.add(c1);
+	}
+	
+}

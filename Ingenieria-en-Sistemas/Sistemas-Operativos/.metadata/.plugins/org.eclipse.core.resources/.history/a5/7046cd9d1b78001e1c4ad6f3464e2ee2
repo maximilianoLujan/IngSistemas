@@ -1,0 +1,16 @@
+package RondaDeMate;
+
+public class Tomador extends Persona{
+	private boolean estaComiendo;
+	
+	public Tomador(boolean estaComiendo) {
+		super();
+		this.estaComiendo = estaComiendo;
+		
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+}

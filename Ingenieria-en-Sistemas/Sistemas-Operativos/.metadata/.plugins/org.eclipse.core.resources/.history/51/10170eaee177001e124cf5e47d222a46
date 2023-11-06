@@ -1,0 +1,11 @@
+package LaPiedraOscilante;
+
+import java.util.Queue;
+
+public class PiedraOscilante {
+	private Queue<Coche> coches;
+	private Queue<Visitante> visitantes;
+	
+	public PiedraOscilante
+	
+}

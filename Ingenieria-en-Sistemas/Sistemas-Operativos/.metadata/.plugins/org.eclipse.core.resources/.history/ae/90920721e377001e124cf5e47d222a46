@@ -1,0 +1,18 @@
+package LaPiedraOscilante;
+
+public class Coche extends Thread{
+	private int cantPasajeros;
+	private int maxPasajeros;
+	
+	
+	public Coche(int cantPasajeros,int maxPasajeros) {
+		this.cantPasajeros = cantPasajeros;
+		this.maxPasajeros = maxPasajeros;
+	}
+	
+	public boolean asientoLibre() {
+		return this.cantPasajeros < this.maxPasajeros;
+	}
+	
+
+}

@@ -1,0 +1,24 @@
+package RondaDeMate;
+
+public class Tomador extends Persona{
+	private boolean estaComiendo;
+	private boolean miTurno;
+	
+	
+	public Tomador(boolean estaComiendo) {
+		super();
+		this.estaComiendo = estaComiendo;
+		this.miTurno = false;
+	}
+	
+	@Override
+	public void run() {
+		esperarMate();
+	}
+	
+	public synchronized void esperarMate() {
+		while(true) {
+			while()
+		}
+	}
+}

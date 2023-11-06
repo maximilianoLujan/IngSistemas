@@ -1,0 +1,19 @@
+package RondaDeMate;
+
+public class Amigo extends Thread {
+	private boolean estaComiento;
+	private boolean esCebador;
+	private RondaDeMates rondaDeMates;
+	
+	
+	public Amigo(boolean esCebador,RondaDeMates rdm) {
+		this.estaComiento = false;
+		this.esCebador = esCebador;
+		this.rondaDeMates = rdm;
+	}
+	
+	@Override
+	public void run() {
+		
+	}
+}

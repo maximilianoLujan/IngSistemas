@@ -1,0 +1,14 @@
+package ManoDeTruco;
+
+import java.util.ArrayList;
+
+public class Mesa {
+	private ArrayList<Jugador> jugadores;
+	
+	public Mesa() {
+		jugadores = new ArrayList<Jugador>();
+	}
+	
+	
+	public synchronized cambiarTurno
+}

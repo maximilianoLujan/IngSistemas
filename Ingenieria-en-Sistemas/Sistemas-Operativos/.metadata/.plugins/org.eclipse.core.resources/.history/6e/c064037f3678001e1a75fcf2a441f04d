@@ -1,0 +1,13 @@
+package BarHangover;
+
+import java.util.Queue;
+
+
+public class Bartender extends Thread{
+	Queue<Cliente> clientesEsperando;
+	Queue<Integer> pedidos;
+	
+	public Bartender() {
+		
+	}
+}

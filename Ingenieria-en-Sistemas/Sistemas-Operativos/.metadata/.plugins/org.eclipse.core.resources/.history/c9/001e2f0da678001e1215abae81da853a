@@ -1,0 +1,16 @@
+package SalaVideojuegos;
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class SalaDeEspera {
+	private Queue<Jugador> jugadoresEsperando;
+	
+	public SalaDeEspera() {
+		this.jugadoresEsperando = new LinkedList<Jugador>();
+	}
+	
+	public synchronized void addJugador(Jugador j1) {
+		jugadoresEsperando.add(j1);
+	}
+}

@@ -1,0 +1,14 @@
+package LaPiedraOscilante;
+
+import java.util.ArrayList;
+
+public class Ejecutable {
+
+	public static void main(String[] args) {
+		Tecnico t1 = new Tecnico();
+		Coche c1 = new Coche(4,t1); 
+		
+		t1.hacerAlgo(c1);
+	}
+
+}

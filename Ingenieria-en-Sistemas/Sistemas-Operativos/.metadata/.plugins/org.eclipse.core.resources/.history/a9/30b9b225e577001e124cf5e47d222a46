@@ -1,0 +1,12 @@
+package LaPiedraOscilante;
+
+public class Tecnico extends Thread {
+
+	
+	
+	@Override
+	public void run() {
+		
+	}
+	
+}

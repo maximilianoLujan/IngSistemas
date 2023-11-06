@@ -1,0 +1,49 @@
+package LaPiedraOscilante;
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+
+public class Tecnico extends Thread {
+	private Queue<Coche> cochesRotos;
+	
+	
+	public Tecnico() {
+		this.cochesRotos = new LinkedList<Coche>(); 
+	}
+	
+	
+	@Override
+	public void run() {
+		esperarPorCoches();
+	}
+	
+	public synchronized void esperarPorCoches() {
+		while(true) {
+			while(cochesRotos.isEmpty()) {
+				try {
+					System.out.println("No hay coches para arreglar");
+					this.wait();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			try {
+				System.out.println("Un coche se rompio y hay que arreglarlo");
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			Coche c1 = this.cochesRotos.poll();
+			c1.cocheArreglado();
+		}
+	}
+	
+	public void addCoche(Coche c1) {
+		this.cochesRotos.add(c1);
+		this.notify();
+	}
+	
+}
