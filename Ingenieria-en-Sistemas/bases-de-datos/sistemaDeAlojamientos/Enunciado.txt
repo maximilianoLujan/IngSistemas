@@ -1,0 +1,17 @@
+1-Crear las tablas junto con sus relaciones
+
+2-Creacio de restricciones:
+  -Cada cliente puede tener a lo sumo 5 alquileres con importe mayor a 25000
+    cada uno en un mismo año(considerando la fecha de inicio del alquiler).
+  -Para los tipos de alojamiento de menos de 50 metros cuadrados, se debe 
+    registrar el costo maximo por dia.
+  -El costo diario de cada alojamiento debe ser menor o igual que el costo
+    diario maximo del de su tipo de alojamiento.
+
+3-Creacion de vistas (en lo posible, actualizables en PostgreSQL):
+  -Datos de los alojamientos que no han registrado alquileres durante el 
+    corriente año.
+  -Por cada alquiler iniciado en los ultimos 3 meses, el importe total del 
+    mismo y la cantidad de alojamientos que abarca
+  -Identificador, nombre y apellido de los 10 clientes que mas alquileres 
+    han realizado.
