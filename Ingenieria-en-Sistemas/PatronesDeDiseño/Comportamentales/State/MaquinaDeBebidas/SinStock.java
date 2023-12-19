@@ -4,7 +4,6 @@ import java.util.TimerTask;
 public class SinStock implements Estado{
 	MaquinaDeBebidas maquina;
 	
-	
 	@Override
 	public void setMaquinaDeBebidas(MaquinaDeBebidas maquina) {
 		this.maquina = maquina;

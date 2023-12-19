@@ -24,25 +24,21 @@ public class BebidaSeleccionada implements Estado{
 		Estado bebidaPagada = new BebidaPagada(dinero);
 		bebidaPagada.setMaquinaDeBebidas(this.maquina);
 		this.maquina.cambiarEstado(bebidaPagada);
-		
 	}
 
 	@Override
 	public void cancelarOperacion() {
 		System.out.println("No hay operacion para cancelar");
-		
 	}
 
 	@Override
 	public void dispensarBebida() {
 		System.out.println("Para dispensar la bebida primero tiene que realizar el pago");
-		
 	}
 
 	@Override
 	public void reponerStock() {
 		System.out.println("Hay stock, por favor realice el pago");
-		
 	}
 
 }

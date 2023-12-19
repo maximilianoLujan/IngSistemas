@@ -41,7 +41,6 @@ public class BebidaPagada implements Estado{
 		Estado sinStock = new SinStock();
 		sinStock.setMaquinaDeBebidas(this.maquina);
 		this.maquina.cambiarEstado(sinStock);
-		
 	}
 
 	@Override

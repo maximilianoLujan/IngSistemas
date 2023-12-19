@@ -4,6 +4,7 @@ public class EstadoInicial implements Estado{
 	public void setMaquinaDeBebidas(MaquinaDeBebidas maquina) {
 		this.maquina = maquina;
 	}
+	
 	@Override
 	public void seleccionarBebida() {
 		System.out.println("Se ha seleccionado la bebida coca-cola");

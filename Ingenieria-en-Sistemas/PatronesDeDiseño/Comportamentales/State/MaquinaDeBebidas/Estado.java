@@ -7,4 +7,5 @@ public interface Estado {
 	public void cancelarOperacion();
 	public void dispensarBebida();
 	public void reponerStock();
+	
 }
