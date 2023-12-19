@@ -18,25 +18,25 @@ public class EstadoInicial implements Estado{
 	}
 
 	@Override
-	public void insertarDinero() {
-		System.out.println("Para pagar debes seleccionar una bebida");
+	public void insertarDinero(double dinero) {
+		System.out.println("Por favor, seleccione la bebida que quiere comprar");
 		
 	}
 
 	@Override
 	public void cancelarOperacion() {
-		System.out.println("No hay ninguna bebida seleccionada");	
+		System.out.println("Por favor, seleccione la bebida que quiere comprar");	
 	}
 
 	@Override
 	public void dispensarBebida() {
-		System.out.println("No hay ninguna bebida seleccionada");
+		System.out.println("Por favor, seleccione la bebida que quiere comprar");
 		
 	}
 
 	@Override
 	public void reponerStock() {
-		System.out.println("No hay ninguna bebida seleccionada");
+		System.out.println("Hay stock, por favor seleccione la bebida que quiere comprar");
 	}
 
 }

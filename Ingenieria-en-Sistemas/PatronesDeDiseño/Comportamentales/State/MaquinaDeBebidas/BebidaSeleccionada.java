@@ -1,4 +1,4 @@
-public public class BebidaSeleccionada implements Estado{
+public class BebidaSeleccionada implements Estado{
 	public MaquinaDeBebidas maquina;
 	
 	public void setMaquinaDeBebidas(MaquinaDeBebidas maquina) {
@@ -19,27 +19,30 @@ public public class BebidaSeleccionada implements Estado{
 	}
 
 	@Override
-	public void insertarDinero() {
-		System.out.print("Se realizo el pago para la coca-cola");
+	public void insertarDinero(double dinero) {
+		System.out.println("Se realizo el pago de $" + dinero + " para la coca-cola");
+		Estado bebidaPagada = new BebidaPagada(dinero);
+		bebidaPagada.setMaquinaDeBebidas(this.maquina);
+		this.maquina.cambiarEstado(bebidaPagada);
 		
 	}
 
 	@Override
 	public void cancelarOperacion() {
-		// TODO Auto-generated method stub
+		System.out.println("No hay operacion para cancelar");
 		
 	}
 
 	@Override
 	public void dispensarBebida() {
-		// TODO Auto-generated method stub
+		System.out.println("Para dispensar la bebida primero tiene que realizar el pago");
 		
 	}
 
 	@Override
 	public void reponerStock() {
-		// TODO Auto-generated method stub
+		System.out.println("Hay stock, por favor realice el pago");
 		
 	}
 
-} 
+}
