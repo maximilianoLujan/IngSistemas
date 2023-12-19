@@ -32,5 +32,4 @@ public class MaquinaDeBebidas {
 	public void reponerStock() {
 		this.estado.reponerStock();
 	}
-	
 }

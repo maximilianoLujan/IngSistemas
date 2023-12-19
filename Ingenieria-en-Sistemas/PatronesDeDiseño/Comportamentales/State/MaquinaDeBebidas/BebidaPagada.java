@@ -46,7 +46,6 @@ public class BebidaPagada implements Estado{
 	@Override
 	public void reponerStock() {
 		System.out.println("La bebida ya fue pagada y disponemos de stock, por favor presione el dispensor");
-		
 	}
 
 }

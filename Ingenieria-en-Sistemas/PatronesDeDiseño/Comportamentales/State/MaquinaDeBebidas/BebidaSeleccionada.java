@@ -24,6 +24,7 @@ public class BebidaSeleccionada implements Estado{
 		Estado bebidaPagada = new BebidaPagada(dinero);
 		bebidaPagada.setMaquinaDeBebidas(this.maquina);
 		this.maquina.cambiarEstado(bebidaPagada);
+		
 	}
 
 	@Override

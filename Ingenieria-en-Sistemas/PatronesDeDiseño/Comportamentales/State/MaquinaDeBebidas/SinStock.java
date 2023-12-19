@@ -12,7 +12,6 @@ public class SinStock implements Estado{
 	@Override
 	public void seleccionarBebida() {
 		System.out.println("Primero seleccione el boton de reponer stock");
-		
 	}
 
 	@Override

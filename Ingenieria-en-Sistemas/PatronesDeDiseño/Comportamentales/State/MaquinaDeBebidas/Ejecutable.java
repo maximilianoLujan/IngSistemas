@@ -18,6 +18,7 @@ public class Ejecutable {
 		maquinaCocaCola.dispensarBebida();
 		maquinaCocaCola.dispensarBebida();
 		maquinaCocaCola.reponerStock();
+		
 		Timer t1 = new Timer();
 		t1.schedule(new TimerTask() {
 			public void run() {
